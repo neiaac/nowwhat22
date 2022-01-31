@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  font-family: 'Supreme', sans-serif;
+  background-color: #001E9B;
+}
+
+main {
+  padding: 15vh 10vw;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo h1 {
+  color: #D0B4F6;
+  font-size: 10rem;
+  line-height: 11rem;
+}
+
+.logo h2 {
+  color: #D0B4F6;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  font-family: 'Share Tech Mono', monospace;
+  text-transform: uppercase;
+}
+
+/* ------------ COUNTDOWN ------------*/
+.countdown>div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  padding: 10vh;
+  margin: 10vh 0 30vh auto;
+  background: url('/assets/images/countdown-img.svg') center no-repeat;
+  background-size: contain;
+}
+
+.countdown span {
+  font-size: 2rem;
+  line-height: 2.25rem;
+  color: #E4613C;
+}
+
+#timer {
+  display: flex;
+  gap: 2rem;
+}
+
+#timer .element>span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+
+/* ------------ INFO ------------*/
+
+.info {
+    color: #D0B4F6;
+    width: 50%;
+    margin-left: auto;
+    
+}
+
+.info h3 {
+    font-size: 4.5rem;
+    line-height: 5rem;
+    text-decoration: underline;
+    margin: 0 0 2rem;
+}
+
+.info p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin: 1rem 0 0;  
+}
+/* ------------ FOOTER ------------*/
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 5vh 0;
+  color: #001E9B;
+  background-color: #E4613C;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+footer > div {
+  display: flex;
+  justify-content: center;
+}
+
+footer .contacts>div, footer .nei>div {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .social {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+footer .social div {
+  display: flex;
+  gap: 0.5rem
+}
+
+footer .contacts span:first-child, footer .social span {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 780px) {
+  main {
+    padding: 5vh;
+  }
+
+  /* ------------ INFO ------------*/
+  .info {
+    width: 100%;
+  }
+
+  .info h2 {
+    margin: 0 0 1rem;
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+
+  /* ------------ FOOTER ------------*/
+  footer {
+    grid: auto auto auto / 1fr;
+    gap: 2rem;
+  }
+
+  footer>div {
+    text-align: center;
+  }
+
+  footer .madeby>div {
+    align-items: center;
+  }
+}
