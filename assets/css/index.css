@@ -1,25 +1,26 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: 'Supreme', sans-serif;
   background-color: #001E9B;
 }
 
 main {
   padding: 15vh 10vw;
+  margin-bottom: -5vh;
+  background: url("/assets/images/Background.png") center no-repeat;
+  background-size: cover;
 }
 
 .logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
 }
 
-.logo h1 {
-  color: #D0B4F6;
-  font-size: 10rem;
-  line-height: 11rem;
-}
 
 .logo h2 {
   color: #D0B4F6;
@@ -40,9 +41,6 @@ main {
   margin: 10vh 0 30vh auto;
   background: url('/assets/images/countdown-img.svg') center no-repeat;
   background-size: contain;
-}
-
-.countdown span {
   font-size: 2rem;
   line-height: 2.25rem;
   color: #E4613C;
@@ -51,15 +49,12 @@ main {
 #timer {
   display: flex;
   gap: 2rem;
+  font: normal 1.5rem/1.75rem 'Share Tech Mono', monospace;
 }
 
 #timer .element>span {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 1.5rem;
-  line-height: 1.75rem;
+  display: block;
+  text-align: center;
 }
 
 /* ------------ INFO ------------*/
@@ -88,9 +83,11 @@ main {
 footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 5vh 0;
+  padding: 15vh 0 7.5vh;
   color: #001E9B;
-  background-color: #E4613C;
+  background: url('/assets/images/Rectangle.svg') no-repeat;
+  background-size: cover;
+  background-position-x: left;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -123,9 +120,30 @@ footer .contacts span:first-child, footer .social span {
 
 @media only screen and (max-width: 780px) {
   main {
+    margin-bottom: 0;
     padding: 5vh;
   }
 
+  .logo img {
+    width: 100%;
+  }
+  /* ------------ COUNTDOWN ------------*/
+  .countdown > div {
+    width: initial;
+    margin: 5vh 0 15vh;
+    padding: 5vh 0;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+
+  #timer {
+    gap: 1rem;
+  }
+
+  #timer .element>span {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
   /* ------------ INFO ------------*/
   .info {
     width: 100%;
@@ -149,5 +167,12 @@ footer .contacts span:first-child, footer .social span {
 
   footer .madeby>div {
     align-items: center;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .countdown > div {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
