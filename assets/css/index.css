@@ -5,99 +5,89 @@
 
 body {
   font-family: 'Supreme', sans-serif;
+  color: #D0B4F6;
   background-color: #001E9B;
 }
 
 main {
-  padding: 15vh 10vw;
   margin-bottom: -5vh;
-  background: url("/assets/images/Background.png") center no-repeat;
+  padding: 15vh 10vw;
+  background: url("/assets/images/background.png") center no-repeat;
   background-size: cover;
 }
 
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
+.logo,
 .logo h2 {
-  color: #D0B4F6;
-  font-size: 2rem;
-  line-height: 2.25rem;
-  font-family: 'Share Tech Mono', monospace;
+  text-align: center;
+  font: normal 2rem/2.25rem 'Share Tech Mono', monospace;
   text-transform: uppercase;
 }
 
 /* ------------ COUNTDOWN ------------*/
 .countdown>div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
   width: fit-content;
-  padding: 10vh;
-  margin: 10vh 0 30vh auto;
-  background: url('/assets/images/countdown-img.svg') center no-repeat;
+  margin: 15vh 0 45vh auto;
+  padding: 7vh;
+  color: #E4613C;
+  background: url('/assets/images/countdown.svg') center no-repeat;
   background-size: contain;
+  text-align: center;
   font-size: 2rem;
   line-height: 2.25rem;
-  color: #E4613C;
 }
 
 #timer {
+  width: fit-content;
   display: flex;
   gap: 2rem;
+  margin: 1rem 0;
+  text-align: center;
   font: normal 1.5rem/1.75rem 'Share Tech Mono', monospace;
 }
 
 #timer .element>span {
   display: block;
-  text-align: center;
 }
 
 /* ------------ INFO ------------*/
-
 .info {
-    color: #D0B4F6;
-    width: 50%;
-    margin-left: auto;
-    
+  width: 50%;
+  margin-left: auto;
 }
 
 .info h3 {
-    font-size: 4.5rem;
-    line-height: 5rem;
-    text-decoration: underline;
-    margin: 0 0 2rem;
+  margin-bottom: 2rem;
+  font-size: 4.5rem;
+  line-height: 4.75rem;
+  text-decoration: underline;
 }
 
 .info p {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    margin: 1rem 0 0;  
-}
-/* ------------ FOOTER ------------*/
-
-footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 15vh 0 7.5vh;
-  color: #001E9B;
-  background: url('/assets/images/Rectangle.svg') no-repeat;
-  background-size: cover;
-  background-position-x: left;
+  margin-top: 1rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-footer > div {
+/* ------------ FOOTER ------------*/
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 12vh 0 6vh;
+  color: #001E9B;
+  background: url('/assets/images/footer.svg') no-repeat;
+  background-position-x: left;
+  background-size: cover;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+footer>div {
   display: flex;
   justify-content: center;
 }
 
-footer .contacts>div, footer .nei>div {
+footer .contacts>div,
+footer .nei>div {
   display: flex;
   flex-direction: column;
 }
@@ -113,24 +103,36 @@ footer .social div {
   gap: 0.5rem
 }
 
-footer .contacts span:first-child, footer .social span {
+footer .social div img {
+  height: 100%;
+}
+
+footer .contacts span:first-child,
+footer .social span {
   font-weight: 700;
   text-transform: uppercase;
 }
 
 @media only screen and (max-width: 780px) {
   main {
-    margin-bottom: 0;
-    padding: 5vh;
+    padding: 5vh 5vw 10vh;
+    background: url("/assets/images/background-mobile.png") no-repeat;
+    background-size: cover;
   }
 
-  .logo img {
+  .info p,
+  #timer .element>span {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .logo img,
+  .info {
     width: 100%;
   }
-  /* ------------ COUNTDOWN ------------*/
-  .countdown > div {
+
+  .countdown>div {
     width: initial;
-    margin: 5vh 0 15vh;
     padding: 5vh 0;
     font-size: 1.5rem;
     line-height: 1.75rem;
@@ -138,27 +140,19 @@ footer .contacts span:first-child, footer .social span {
 
   #timer {
     gap: 1rem;
+    margin: 1rem auto;
   }
 
-  #timer .element>span {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-  /* ------------ INFO ------------*/
-  .info {
-    width: 100%;
+  .info h3 {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
   }
 
-  .info h2 {
-    margin: 0 0 1rem;
-    font-size: 3rem;
-    line-height: 4.5rem;
-  }
-
-  /* ------------ FOOTER ------------*/
   footer {
     grid: auto auto auto / 1fr;
     gap: 2rem;
+    padding: 8vh 0 6vh;
+    background-image: url('/assets/images/footer-mobile.svg');
   }
 
   footer>div {
@@ -170,9 +164,13 @@ footer .contacts span:first-child, footer .social span {
   }
 }
 
-@media only screen and (max-width: 320px) {
-  .countdown > div {
-    font-size: 1rem;
-    line-height: 1.5rem;
+@media only screen and (max-width: 400px) {
+  main {
+    background-size: 115%;
+  }
+
+  .countdown>div {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
