@@ -11,12 +11,18 @@ body {
 
 main {
   margin-bottom: -5vh;
-  padding: 15vh 10vw;
-  background: url("/assets/images/background.png") center no-repeat;
+  background: url("/public/assets/images/background.png") center no-repeat;
   background-size: cover;
 }
 
-.logo,
+section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .logo h2 {
   text-align: center;
   font: normal 2rem/2.25rem 'Share Tech Mono', monospace;
@@ -24,12 +30,16 @@ main {
 }
 
 /* ------------ COUNTDOWN ------------*/
+.countdown {
+  justify-content: flex-end;
+}
+
 .countdown>div {
   width: fit-content;
-  margin: 15vh 0 45vh auto;
+  margin-right: 10vw;
   padding: 7vh;
   color: #E4613C;
-  background: url('/assets/images/countdown.svg') center no-repeat;
+  background: url('/public/assets/images/countdown.svg') center no-repeat;
   background-size: contain;
   text-align: center;
   font-size: 2rem;
@@ -51,8 +61,12 @@ main {
 
 /* ------------ INFO ------------*/
 .info {
+  justify-content: flex-end;
+}
+
+.info>div {
   width: 50%;
-  margin-left: auto;
+  padding: 0 10vw 25vh 0;
 }
 
 .info h3 {
@@ -74,7 +88,7 @@ footer {
   grid-template-columns: 1fr 1fr 1fr;
   padding: 12vh 0 6vh;
   color: #001E9B;
-  background: url('/assets/images/footer.svg') no-repeat;
+  background: url('/public/assets/images/footer.svg') no-repeat;
   background-position-x: left;
   background-size: cover;
   font-size: 1rem;
@@ -115,8 +129,8 @@ footer .social span {
 
 @media only screen and (max-width: 780px) {
   main {
-    padding: 5vh 5vw 10vh;
-    background: url("/assets/images/background-mobile.png") no-repeat;
+    padding: 0 5vw;
+    background: url("/public/assets/images/background-mobile.png") right no-repeat;
     background-size: cover;
   }
 
@@ -127,12 +141,22 @@ footer .social span {
   }
 
   .logo img,
-  .info {
+  .info>div {
     width: 100%;
+    padding: 0;
+  }
+
+  .info {
+    align-items: flex-start;
+  }
+
+  .countdown {
+    justify-content: center;
   }
 
   .countdown>div {
-    width: initial;
+    width: inherit;
+    margin: 0;
     padding: 5vh 0;
     font-size: 1.5rem;
     line-height: 1.75rem;
@@ -152,7 +176,7 @@ footer .social span {
     grid: auto auto auto / 1fr;
     gap: 2rem;
     padding: 8vh 0 6vh;
-    background-image: url('/assets/images/footer-mobile.svg');
+    background-image: url('/public/assets/images/footer-mobile.svg');
   }
 
   footer>div {
@@ -165,12 +189,18 @@ footer .social span {
 }
 
 @media only screen and (max-width: 400px) {
-  main {
-    background-size: 115%;
-  }
-
   .countdown>div {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .info>div {
+    padding-bottom: 10vh;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .info>div {
+    padding: 25vh 0;
   }
 }
