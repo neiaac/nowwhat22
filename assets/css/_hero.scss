@@ -1,0 +1,20 @@
+.hero {
+  min-height: 90vh;
+
+  p {
+    margin-top: 6rem;
+    text-align: center;
+    color: $orange;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font: normal 2rem/2.25rem $monospace;
+  }
+}
+
+
+@media only screen and (max-width: 780px) {
+  .hero img {
+    width: 100%;
+    padding: 0;
+  }
+}

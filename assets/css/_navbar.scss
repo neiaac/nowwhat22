@@ -1,0 +1,48 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vh 10vw;
+
+  a {
+    color: $orange;
+    text-transform: uppercase;
+    font: normal 1rem/1.25rem $monospace;
+  }
+
+  >a {
+    position: relative;
+  }
+
+  .nav-arrows {
+    position: absolute;
+    width: 9rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    img {
+      width: 10rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  header {
+    flex-direction: column;
+
+    nav {
+      flex-direction: column;
+    }
+  }
+}

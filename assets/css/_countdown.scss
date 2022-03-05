@@ -1,0 +1,57 @@
+.countdown {
+  justify-content: flex-end;
+
+  &>div {
+    width: fit-content;
+    padding: 7vh;
+    color: $orange;
+    background: url('/assets/images/countdown.svg') center no-repeat;
+    background-size: contain;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
+
+  #timer {
+    width: fit-content;
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+    text-align: center;
+    font: normal 1.5rem/1.75rem $monospace;
+
+    .element>span {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .countdown {
+    justify-content: center;
+
+    &>div {
+      width: inherit;
+      padding: 5vh 0;
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+
+      #timer {
+        gap: 1rem;
+        margin: 1rem auto;
+
+        .element>span {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .countdown>div {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
