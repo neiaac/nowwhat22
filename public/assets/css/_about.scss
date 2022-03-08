@@ -8,18 +8,23 @@
 
     a {
       height: fit-content;
-      padding: 2rem;
+      padding: 1.5rem;
       margin-top: 2rem;
       color: $orange;
       text-transform: uppercase;
+      text-decoration: none;
       font: normal 1.5rem/1.75rem $monospace;
-      background: url('/assets/images/countdown.svg') center no-repeat;
+      background: url('/assets/images/nwi_circle.svg') center no-repeat;
       background-size: contain;
     }
   }
 
   &>div {
     width: 50%;
+
+    ul {
+      padding-left: 5vw;
+    }
 
     &:first-child {
       align-self: center;
@@ -33,11 +38,12 @@
   }
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 900px) {
   .about {
     align-items: flex-start;
 
     .nwi-title {
+      align-items: center;
       flex-direction: column;
 
       h2 {

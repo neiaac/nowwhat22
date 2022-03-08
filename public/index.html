@@ -25,6 +25,7 @@
     <link href="assets/css/applications.css" rel="stylesheet" />
     <link href="https://api.fontshare.com/css?f[]=supreme@400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -37,7 +38,8 @@
             <a href="#sponsors-link">Parceiros</a>
         </nav>
         <div>
-            <a href="#" target="_blank">Inscreve-te Aqui!</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQtySg168ogfItUJOxBSsPM8fEzZjmRlPPfOgS5Thw4TQL4A/viewform"
+                target="_blank">Inscreve-te Aqui!</a>
             <div class="nav-arrows">
                 <img src="assets/images/nav_arrow_left.svg" alt="" />
                 <img src="assets/images/nav_arrow_center.svg" alt="" />
@@ -45,6 +47,24 @@
             </div>
         </div>
     </header>
+    <nav class="mobile">
+        <img id="mobile" src="assets/images/menu_open.svg" alt="Open Navbar">
+        <div id="mobile-navbar">
+            <a href="#about-link">Sobre</a>
+            <a href="#program-link">Programa</a>
+            <a href="#nowworkit-link">Now Work It!</a>
+            <a href="#sponsors-link">Parceiros</a>
+            <div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQtySg168ogfItUJOxBSsPM8fEzZjmRlPPfOgS5Thw4TQL4A/viewform"
+                    target="_blank">Inscreve-te Aqui!</a>
+                <div class="nav-arrows">
+                    <img src="assets/images/nav_arrow_left.svg" alt="" />
+                    <img src="assets/images/nav_arrow_center.svg" alt="" />
+                    <img src="assets/images/nav_arrow_right.svg" alt="" />
+                </div>
+            </div>
+        </div>
+    </nav>
     <main>
         <section class="hero" id="hero-link">
             <div>
@@ -285,7 +305,8 @@
             <div>
                 <div class="nwi-title">
                     <h2>now work it!</h2>
-                    <a href="#" target="_blank">Inscrições</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSciV4eDGg-MvVoV7sM1TomfAST-3AW4v6-J8-Wc88NzdqNNqw/viewform?embedded=true"
+                        target="_blank">Inscrições</a>
                 </div>
                 <h3>O que é?</h3>
                 <p>
@@ -332,20 +353,26 @@
                 <h3>Sponsored by</h3>
                 <div class="sponsors-row">
                     <h4>Giga</h4>
-                    <img src="assets/images/sponsor_giga_critical.svg" alt="Critical Software">
-                    <img src="assets/images/sponsor_giga_redlight.svg" alt="RedLight">
+                    <div>
+                        <img src="assets/images/sponsor_giga_critical.svg" alt="Critical Software">
+                        <img src="assets/images/sponsor_giga_redlight.svg" alt="RedLight">
+                    </div>
                 </div>
                 <div class="sponsors-row">
                     <h4>Mega</h4>
-                    <img src="assets/images/sponsor_mega_noesis.svg" alt="Noesis">
-                    <img src="assets/images/sponsor_mega_goodbarber.svg" alt="Good Barber">
-                    <img src="assets/images/sponsor_mega_feedzai.svg" alt="Feedzai">
+                    <div>
+                        <img src="assets/images/sponsor_mega_noesis.svg" alt="Noesis">
+                        <img src="assets/images/sponsor_mega_goodbarber.svg" alt="Good Barber">
+                        <img src="assets/images/sponsor_mega_feedzai.svg" alt="Feedzai">
+                    </div>
                 </div>
                 <div class="sponsors-row last-row">
                     <h4>Kapa</h4>
-                    <img src="assets/images/sponsor_kappa_pinkroom.svg" alt="Pink Room">
-                    <img src="assets/images/sponsor_kappa_grama.svg" alt="Grama">
-                    <img src="assets/images/sponsor_kappa_cisco.svg" alt="Cisco">
+                    <div>
+                        <img src="assets/images/sponsor_kappa_pinkroom.svg" alt="Pink Room">
+                        <img src="assets/images/sponsor_kappa_grama.svg" alt="Grama">
+                        <img src="assets/images/sponsor_kappa_cisco.svg" alt="Cisco">
+                    </div>
                 </div>
             </div>
             <div>
@@ -389,16 +416,30 @@
 <script>
     var countDownDate = new Date("Mar 15, 2022 09:00:00").getTime();
     var x = setInterval(function () {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-        document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-        document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 *
-            60 * 60));
-        document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+        var distance = countDownDate - new Date().getTime();
+        $("#days").html(Math.floor(distance / (1000 * 60 * 60 * 24)));
+        $("#hours").html(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+        $("#minutes").html(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+        $("#seconds").html(Math.floor((distance % (1000 * 60)) / 1000));
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("timer").innerHTML = "zero";
+            $("#timer").html("zero");
         }
     }, 1000);
+
+    var temp = 0;
+    $("#mobile").click(function () {
+        if (temp % 2 == 0) {
+            $("#mobile-navbar").css("display", "flex");
+            $("#mobile").attr("src", "assets/images/menu_close.svg");
+            $("#mobile").css("position", "fixed");
+            $("html").css("overflow-y", "hidden");
+        } else {
+            $("#mobile-navbar").css("display", "none");
+            $('#mobile').attr('src', 'assets/images/menu_open.svg');
+            $("#mobile").css("position", "inherit");
+            $("html").css("overflow-y", "scroll");
+        }
+        temp++;
+    });
 </script>
